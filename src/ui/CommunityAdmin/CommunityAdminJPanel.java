@@ -2,11 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package ui;
+package ui.CommunityAdmin;
+import javax.swing.InputVerifier;
 import model.System;
 import model.City;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import model.IntegerVerifier;
+import model.StringVerifier;
 
 
 /**
@@ -23,9 +26,17 @@ public class CommunityAdminJPanel extends javax.swing.JPanel {
     public CommunityAdminJPanel(System system) {
         initComponents();
         this.system = system;
+        addVerifiers();
+
         populateTable();
     }
-
+    private void addVerifiers() {
+        InputVerifier integerVerifier = new IntegerVerifier();
+        jTextField3.setInputVerifier(integerVerifier);
+        InputVerifier stringVerifier = new StringVerifier();
+        jTextField1.setInputVerifier(stringVerifier);
+        jTextField2.setInputVerifier(stringVerifier);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

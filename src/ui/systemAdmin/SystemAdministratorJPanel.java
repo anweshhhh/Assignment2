@@ -10,6 +10,7 @@ import static java.awt.Frame.MAXIMIZED_BOTH;
 import model.Patient;
 import model.PatientDirectory;
 import model.PersonDirectory;
+import ui.systemAdmin.Person.CreatePerson;
 
 /**
  *
@@ -101,12 +102,13 @@ public class SystemAdministratorJPanel extends javax.swing.JPanel {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(patient)
-                    .addComponent(hospital)
-                    .addComponent(encounter)
-                    .addComponent(person)
-                    .addComponent(doctor))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(patient, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(hospital)
+                        .addComponent(encounter)
+                        .addComponent(person)
+                        .addComponent(doctor)))
                 .addGap(0, 164, Short.MAX_VALUE))
         );
 
@@ -141,7 +143,7 @@ public class SystemAdministratorJPanel extends javax.swing.JPanel {
 
     private void personActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personActionPerformed
         // TODO add your handling code here:
-        PersonPanel p = new PersonPanel(this, personDirectory,patientHistory);
+        CreatePerson p = new CreatePerson(this, personDirectory,patientHistory);
         jSplitPane1.setRightComponent(p);
         
         

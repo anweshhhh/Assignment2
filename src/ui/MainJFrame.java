@@ -4,6 +4,7 @@
  */
 package ui;
 
+import ui.CommunityAdmin.CommunityAdminJPanel;
 import ui.systemAdmin.SystemAdministratorJPanel;
 import javax.swing.JOptionPane;
 import model.System;

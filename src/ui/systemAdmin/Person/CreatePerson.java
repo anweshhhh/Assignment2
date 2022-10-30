@@ -59,9 +59,9 @@ public class CreatePerson extends javax.swing.JPanel {
         weightjLabel = new javax.swing.JLabel();
         personWeightJTextField = new javax.swing.JTextField();
         cityjLabel = new javax.swing.JLabel();
-        personCityJTextField = new javax.swing.JTextField();
         personCommunityJTextField = new javax.swing.JLabel();
         personCommunityjComboBox = new javax.swing.JComboBox<>();
+        personCommunityjComboBox1 = new javax.swing.JComboBox<>();
 
         jPanel1.setMinimumSize(new java.awt.Dimension(500, 700));
 
@@ -106,6 +106,13 @@ public class CreatePerson extends javax.swing.JPanel {
             }
         });
 
+        personCommunityjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Roxbury", "Fenway", "Downtown", "Kenmore" }));
+        personCommunityjComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                personCommunityjComboBox1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -125,16 +132,17 @@ public class CreatePerson extends javax.swing.JPanel {
                     .addComponent(personCommunityJTextField))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(personAgeJTextField)
-                            .addComponent(pesonNameJTextField)
-                            .addComponent(personWeightJTextField)
-                            .addComponent(personCityJTextField)
-                            .addComponent(personCommunityjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(93, 93, 93)
-                        .addComponent(addPersonJButton)))
+                        .addComponent(addPersonJButton))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(personCommunityjComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(personAgeJTextField)
+                                .addComponent(pesonNameJTextField)
+                                .addComponent(personWeightJTextField)
+                                .addComponent(personCommunityjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(159, 159, 159))
         );
         jPanel1Layout.setVerticalGroup(
@@ -154,15 +162,15 @@ public class CreatePerson extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(personWeightJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(weightjLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(40, 40, 40)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(37, 37, 37)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cityjLabel)
-                    .addComponent(personCityJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(personCommunityJTextField)
                     .addComponent(personCommunityjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
+                .addGap(12, 12, 12)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(personCommunityJTextField)
+                    .addComponent(personCommunityjComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backJButton)
                     .addComponent(addPersonJButton))
@@ -182,7 +190,7 @@ public class CreatePerson extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 693, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -195,7 +203,6 @@ public class CreatePerson extends javax.swing.JPanel {
         pesonNameJTextField.setText("");
         personAgeJTextField.setText("");
         personWeightJTextField.setText("");
-        personCityJTextField.setText("");
     }
     private Boolean checkBlankInput()
     {
@@ -216,8 +223,8 @@ public class CreatePerson extends javax.swing.JPanel {
             person.setPersonName(pesonNameJTextField.getText());
             person.setAge(Integer.parseInt(personAgeJTextField.getText()));
             person.setWeight(Integer.parseInt(personWeightJTextField.getText()));
-            person.setCommunityName((String)personCommunityjComboBox.getSelectedItem());
-            person.setCityName(personCityJTextField.getText());
+            person.setCityName((String)personCommunityjComboBox.getSelectedItem());
+            person.setCommunityName((String)personCommunityjComboBox1.getSelectedItem());
 
             JOptionPane.showMessageDialog(this, "Person added!!", "Update",
                 JOptionPane.INFORMATION_MESSAGE);
@@ -245,6 +252,10 @@ public class CreatePerson extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_personCommunityjComboBoxActionPerformed
 
+    private void personCommunityjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personCommunityjComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_personCommunityjComboBox1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AgeJLabel;
@@ -255,9 +266,9 @@ public class CreatePerson extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel patientNameJLabel;
     private javax.swing.JTextField personAgeJTextField;
-    private javax.swing.JTextField personCityJTextField;
     private javax.swing.JLabel personCommunityJTextField;
     private javax.swing.JComboBox<String> personCommunityjComboBox;
+    private javax.swing.JComboBox<String> personCommunityjComboBox1;
     private javax.swing.JTextField personWeightJTextField;
     private javax.swing.JTextField pesonNameJTextField;
     private javax.swing.JLabel weightjLabel;
