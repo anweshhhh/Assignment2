@@ -61,6 +61,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        controlJPanel.setBackground(new java.awt.Color(0, 0, 0));
+
         jButton2.setBackground(new java.awt.Color(153, 204, 255));
         jButton2.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jButton2.setText("Search Doctors");
@@ -103,6 +105,8 @@ public class MainJFrame extends javax.swing.JFrame {
         );
 
         jSplitPane1.setLeftComponent(controlJPanel);
+
+        workareaJPanel.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
         jLabel1.setText("System Admin Login :");
