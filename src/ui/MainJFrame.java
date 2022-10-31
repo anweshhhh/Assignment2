@@ -7,7 +7,6 @@ package ui;
 import ui.CommunityAdmin.CommunityAdminJPanel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import model.System;
 /**
  *
  * @author anweshsingh
@@ -17,10 +16,10 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    System system;
+    
     public MainJFrame() {
         initComponents();
-        system = new System();
+        
     }
 
     /**

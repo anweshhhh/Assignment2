@@ -4,12 +4,8 @@
  */
 package ui.CommunityAdmin;
 import javax.swing.InputVerifier;
-import model.System;
-import model.City;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import model.IntegerVerifier;
-import model.StringVerifier;
 
 
 /**
