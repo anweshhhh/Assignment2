@@ -54,7 +54,10 @@ public class CommunityAdminJPanel extends javax.swing.JPanel {
             new Object [][] {
                 {"St. James", "Jam", "Bos"},
                 {"Children", "Jam", "Bos"},
-                {"Matthews", "Rox", "Bos"}
+                {"Matthews", "Rox", "Bos"},
+                {"Children", "Rox", "Bos"},
+                {"VA", "Huntington", "Bos"},
+                {"Apollo", "Dorchester", "Bos"}
             },
             new String [] {
                 "Hospital", "Community", "City"
